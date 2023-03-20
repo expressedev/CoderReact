@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../CartContext/CartContext'
 
+
 const CartList = () => {
 
     const { cartList, totalBuy, removeItem, emptyCart } = useContext(CartContext)
@@ -38,12 +39,12 @@ const CartList = () => {
                         <hr></hr>
                     </div>
                 )}
-                <h5>Precio Total: <b>${totalBuy()}</b></h5>
+                <h5>Total: <b>${totalBuy()}</b></h5>
                 
                 <div className="d-flex justify-content-center mt-5">
-                    <button className="btn btn-warning bg-gradient me-3" onClick={emptyCart}>Despejar Carrito</button>
+                    <button className="btn btn-warning bg-gradient me-3" onClick={emptyCart}>Vaciar</button>
                     <Link to="/checkout">
-                        <button className="btn btn-warning bg-gradient ms-3">Procesar tu Compra</button>
+                        <button className="btn btn-warning bg-gradient ms-3"><b>Finalizar la Compra</b></button>
                     </Link>
                 </div>
             </div>
