@@ -13,10 +13,10 @@ const Loader = () => {
     return (
         <>
             <div className="loaderContainerMobile">
-                <BeatLoader color='#f7c94a' css={override} size={40} />
+                <BeatLoader color='#f7c94a' css={override} size={45} />
             </div>
             <div className="loaderContainer">
-                <BeatLoader color='##f7c94a' css={override} size={100} />
+                <BeatLoader color='##f7c94a' css={override} size={105} />
             </div>
         </>
     )
