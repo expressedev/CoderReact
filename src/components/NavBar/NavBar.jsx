@@ -9,7 +9,7 @@ import '../Cart/Cart.css'
 const NavBar = ({cartCount}) => {
 	return (
         <>
-            <Navbar bg="dark" variant="dark" expand="lg">
+            <Navbar bg="light" expand="lg">
                 <Container>
                     <Link to="/">
                         <Navbar.Brand>
@@ -25,11 +25,11 @@ const NavBar = ({cartCount}) => {
                     <Link className="cart-mobile" style={{paddingRight:'2rem'}} to="/cart">
                         <CartWidget cartCount={cartCount} />
                     </Link> 
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Toggle bg="light" expand="lg" aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
                         <Nav className="align-items-center">
-                            <NavLink className="nav-link" to="/">
-                                Home
+                            <NavLink color= "red" className="nav-link" to="/">
+                                Inicio
                             </NavLink>
                             <NavLink className="nav-link" to="/categoria/secos">
                                 Frutos Secos
