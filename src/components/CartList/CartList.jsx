@@ -21,16 +21,16 @@ const CartList = () => {
                             <img src={prod.imagen} style={{width:150}}></img>
                         </div>
                         <div className="col-lg-3 col-sm-3">
-                            <h4>{prod.producto}</h4>
+                            <h5>{prod.producto}</h5>
                         </div>
                         <div className="col-lg-2 col-sm-2">
-                            <h4>${prod.precio}</h4>
+                            <h5>${prod.precio}</h5>
                         </div>
                         <div className="col-lg-1 col-sm-1">
-                            <h4>{prod.quantity}</h4>
+                            <h5>{prod.quantity}</h5>
                         </div>
                         <div className="col-lg-2 col-sm-2">
-                            <h4>${prod.quantity * prod.precio}</h4>
+                            <h5>${prod.quantity * prod.precio}</h5>
                         </div>
                         <div className="col-lg-1 col-sm-1">
                             <button className="btn btn-warning bg-gradient" onClick={() => removeItem(prod.id)}>Eliminar</button>
@@ -38,8 +38,8 @@ const CartList = () => {
                         <hr></hr>
                     </div>
                 )}
-                <h3><b>Precio Total:</b></h3>
-                <h4 className="text-center"><b>${totalBuy()}</b></h4>
+                <h5>Precio Total: <b>${totalBuy()}</b></h5>
+                
                 <div className="d-flex justify-content-center mt-5">
                     <button className="btn btn-warning bg-gradient me-3" onClick={emptyCart}>Despejar Carrito</button>
                     <Link to="/checkout">
