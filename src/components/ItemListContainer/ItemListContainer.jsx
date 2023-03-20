@@ -1,44 +1,45 @@
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
-import {getFetch} from '../../helpers/getFetch'
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 import ItemList from '../ItemList/ItemList'
+import Loader from '../Loader/Loader'
 
 function ItemListContainer({greeting}) {
-    const [productos, setProductos] = useState([])
-    const [loading, setLoading] = useState(true)
 
+    const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
     const { idCategory } = useParams()
 
     useEffect(() => {
-
-        if (idCategory) {            
-            getFetch
-            .then(resp => setProductos(resp.filter(prod => prod.category === idCategory)))
-            .catch(err => console.error(err))
+        const db = getFirestore();
+        if (idCategory) {
+            const queryCollectionCategory = query(collection(db, 'productos'), where('category', '==', idCategory) )
+            getDocs(queryCollectionCategory)
+            .then(resp => setProducts( resp.docs.map(prod => ({ id: prod.id, ...prod.data()}))))
             .finally(() => setLoading(false))
         } else {
-            getFetch
-            .then(resp => setProductos(resp))
-            .catch(err => console.error(err))
+            const queryCollection = collection(db, 'productos')
+            getDocs(queryCollection)
+            .then(resp => setProducts( resp.docs.map(prod => ({ id: prod.id, ...prod.data()}))))
             .finally(() => setLoading(false))
-        }
+        }  
     }, [idCategory])
-
-
 
     return (
         <div>
             <h2 className="text-center"> {greeting} </h2>
             <div className="container">
                 <div className="row">
-                    { loading ? 
-                        <h2 className="text-center">Cargando...</h2>
-                        :
-                        <ItemList productos={productos}/>
+                    { loading 
+                    ? 
+                        <Loader />
+                    :
+                        <ItemList products={products}/>
                     }
                 </div>
             </div>
         </div>
     )
 }
+
 export default ItemListContainer

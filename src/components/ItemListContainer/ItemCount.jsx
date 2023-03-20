@@ -1,28 +1,32 @@
 import React, {useState} from 'react'
 
-function ItemCount({inicial, max, onAdd}) {
+function ItemCount({initial, max, onAdd}) {
 
-    const [value, setValue] = useState(inicial)
+    const [value, setValue] = useState(initial)
 
-
-    const btnSumar = () => {
-        value < max ?  setValue(value + 1) : console.log("Maximo Seleccionado")
+    // Sumar, no permite pasar las unidades de stock
+    const btnPlus = () => {
+        if (value < max) {
+            setValue(value + 1);
+        } 
     }
 
-    const btnRestar = () => {
-        value > inicial ?   setValue(value - 1) : console.log("No se pueden añadir 0 productos")
+    // Restar, no permite llegar a 0 unidades
+    const btnMinus = () => {
+        if (value > initial)  {
+            setValue(value - 1)
+        }
     }
-
-
+    
     return (
         <div>
             <div className="d-flex justify-content-center align-items-center">
-                <button onClick={btnRestar} className="btn btn-dark">-</button>
-                <h3 className="m-3">{value}</h3>
-                <button onClick={btnSumar} className="btn btn-dark">+</button>
+                <button onClick={btnMinus} className="btn btn-warning">-</button>
+                <h3 className="m-2">{value}</h3>
+                <button onClick={btnPlus} className="btn btn-warning">+</button>
             </div>
             <div className="d-flex justify-content-center">
-            <button onClick={()=> onAdd(value)} className="btn btn-danger bg-gradient mt-3">Añadir Carrito</button>
+                <button onClick={()=> onAdd(value)} className="btn btn-warning bg-gradient mt-2">Añadir al Carro</button>
             </div>
         </div>
     )

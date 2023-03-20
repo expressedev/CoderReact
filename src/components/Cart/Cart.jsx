@@ -1,39 +1,32 @@
 import React, {useContext} from 'react'
+import { Link } from 'react-router-dom'
 import { CartContext } from '../CartContext/CartContext'
+import CartList from '../CartList/CartList'
+
 
 function Cart() {
 
-    const {cartList, eliminarItem, vaciarCarrito} = useContext(CartContext)
+    const { cartList } = useContext(CartContext)
 
     return (
-        <div>
-            <div className="container">
-                <div className="row justify-content-center">
-                    {cartList.map(prod => 
-                    <div className="row" key={prod.id}>
-                        <div className="col-3">
-                            <img src={prod.img} style={{width:150}}></img>
-                        </div>
-                        <div className="col-3">
-                            <h5>{prod.name}</h5>
-                        </div>
-                        <div className="col-3">
-                            <h5>{prod.price}</h5>
-                        </div>
-                        <div className="col-1">
-                            <h5>{prod.cantidad}</h5>
-                        </div>
-                        <div className="col-2">
-                            <button className="btn btn-danger bg-gradient">Eliminar</button>
-                        </div>
-                    </div>
-                    )}
-                    <div className="d-flex justify-content-center">
-                        <button className="btn btn-danger bg-gradient" onClick={vaciarCarrito}>Vaciar Carrito</button>
+        <>
+
+            {cartList.length === 0
+            ? 
+                <div className="container mt-5">
+                    <div className="row text-center justify-content-center">
+                        <h3 className="my-5"><strong>Oops, no hay ningun producto.</strong></h3>
+                        <h4 className="my-5">Agrega productos!</h4>
+                        <Link className="btn btn-warning bg-gradient w-25" to="/">
+                            Comprar
+                        </Link>
                     </div>
                 </div>
-            </div>
-        </div>
+            :
+                <CartList />
+            }
+        </>
     )
 }
+
 export default Cart
