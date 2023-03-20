@@ -76,7 +76,7 @@ const FormBuyer = () => {
             {creatingOrder
             ?
                 <>      
-                    <h4 className="mt-5 text-center">Procesando su orden, espere un momento...</h4>
+                    <h4 className="mt-5 text-center">Estamos procesando su orden...</h4>
                     <Loader />
                 </>
             :
