@@ -8,7 +8,7 @@ function Item({prod}) {
                 <img src={prod.imagen} className="card-img-top card-img-products" alt={prod.producto}/>
                 <div className="card-body text-center">
                     <h5 className="card-title">{prod.producto}</h5>
-                    <h6 className="card-text">${prod.precio}</h6>
+                    <h6 className="card-text" style = {{color: '#f6e0a1 '}}>${prod.precio}</h6>
                 </div>
                 <div className="card-footer text-center" id="footer">
                     <Link to={`/detalle/${prod.id}`}>

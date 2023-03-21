@@ -85,7 +85,7 @@ const FormBuyer = () => {
                 <div className="container">
                     <div className="py-5 text-center mt-4">
                         <h2 className="mt-4">Gracias por tu compra</h2>
-                        <h4 className="my-4">La compra se fue exitosa.</h4>
+                        <h4 className="my-4">La compra fue exitosa.</h4>
                         <strong>El ID es {orderId}</strong><br />
                         <Link className="btn btn-warning bg-gradient mt-4" to={`/`}>
                             <strong>Inicio</strong>
