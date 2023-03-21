@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 import ItemList from '../ItemList/ItemList'
 import Loader from '../Loader/Loader'
@@ -30,7 +30,9 @@ function ItemListContainer({greeting}) {
     return (
         <div>
             {/* <h2 className="text-center"> {greeting} </h2> */}
+            <Link to="/">
             <img src={banner} className="img-fluid "></img>
+            </Link>
             <div className="container">
                 <div className="row">
                     { loading 
