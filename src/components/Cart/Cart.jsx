@@ -14,7 +14,7 @@ function Cart() {
             {cartList.length === 0
             ? 
                 <div className="container mt-5">
-                    <div className="row text-center justify-content-center">
+                    <div className="row text-center justify-content-center" style={{padding:'1rem',}}>
                         <h3 className="my-5"><strong>Oops, no hay ningun producto en tu carrito.</strong></h3>
                         <h4 className="my-5">Agrega productos!</h4>
                         <Link className="btn btn-warning bg-gradient w-25" to="/">

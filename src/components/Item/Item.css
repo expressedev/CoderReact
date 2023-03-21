@@ -4,16 +4,26 @@
     object-fit: contain;
 }
 .card-title{
-    color: #f6e0a1;
+    color: #ffffff;
     font-weight: 900;
+    font-size: 25px;
 }
 .card-text{
-    color: #f6e0a1;
-    font-weight: 900;
+    color: #ffffff;
+    font-weight: 200;
+    font-size: 20px;
 }
 
 #footer{
     background-color: rgba(132, 162, 88, 0.9);
     border: 1px;
 }
+
+#button{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 3px 30px;
+}
+
 

@@ -28,14 +28,14 @@ const NavBar = ({cartCount}) => {
                     <Navbar.Toggle bg="light" expand="lg" aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
                         <Nav className="align-items-center">
-                            <NavLink color= "red" className="nav-link" to="/">
+                            <NavLink color= "red" className="nav-link" to="/" style={{fontSize:'18px'}}>
                                 Inicio
                             </NavLink>
-                            <NavLink className="nav-link" to="/categoria/secos">
-                                Frutos Secos
-                            </NavLink>
-                            <NavLink className="nav-link" to="/categoria/rojos">
+                            <NavLink className="nav-link" to="/categoria/rojos" style={{fontSize:'18px'}}>
                                 Frutos Rojos
+                            </NavLink>
+                            <NavLink className="nav-link" to="/categoria/secos" style={{fontSize:'18px'}}>
+                                Frutos Secos
                             </NavLink>
                         </Nav>
                     </Navbar.Collapse>

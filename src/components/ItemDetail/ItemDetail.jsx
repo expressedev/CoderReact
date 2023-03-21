@@ -23,10 +23,10 @@ function ItemDetail({product}) {
                     <img src={product.imagen} className="itemDetail-img"></img>
                 </div>
                 <div className="col-lg-5 col-md-12 col-sm-12">
-                    <h4 className="fw-bold">{product.producto}</h4>
-                    <h5>${product.precio}</h5>
-                    <p>{product.descripcion}</p>
-                    <h6>Stock: {product.stock}</h6>
+                    <h2 className="fw-bold" style={{color: '#ffffff'}}>{product.producto}</h2>
+                    <h3 style={{color: '#ffffff'}}>${product.precio}</h3>
+                    <p style={{color: '#ffffff'}}>{product.descripcion}</p>
+                    <h6 style={{color: '#ffffff'}}>Stock: {product.stock}</h6>
 
                     {!goToCart 
                     ? 

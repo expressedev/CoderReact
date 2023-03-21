@@ -19,12 +19,12 @@ function ItemCount({initial, max, onAdd}) {
     return (
         <div>
             <div className="d-flex justify-content-center align-items-center" style={{padding:'0'}}>
-                <button onClick={btnMinus} className="btn btn-warning">-</button>
+                <button onClick={btnMinus} className="btn btn-warning" style={{paddingLeft:'1.5rem', paddingRight:'1.5rem', fontSize:'20px', color: '#ffffff'}}><b>-</b></button>
                 <h3 className="m-2">{value}</h3>
-                <button onClick={btnPlus} className="btn btn-warning">+</button>
+                <button onClick={btnPlus} className="btn btn-warning" style={{paddingLeft:'1.5rem', paddingRight:'1.5rem', fontSize:'20px', color: '#ffffff'}}><b>+</b></button>
             </div>
             <div className="d-flex justify-content-center">
-                <button onClick={()=> onAdd(value)} className="btn btn-warning bg-gradient mt-2">Añadir al Carro</button>
+                <button onClick={()=> onAdd(value)} className="btn btn-warning bg-gradient mt-2" style={{paddingLeft:'1rem', paddingRight:'1.2rem', paddingTop:'1rem', paddingBottom:'1rem', color: '#ffffff'}}><b>Añadir al Carro</b></button>
             </div>
         </div>
     )
