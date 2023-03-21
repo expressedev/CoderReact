@@ -4,14 +4,12 @@ function ItemCount({initial, max, onAdd}) {
 
     const [value, setValue] = useState(initial)
 
-    // Sumar, no permite pasar las unidades de stock
     const btnPlus = () => {
         if (value < max) {
             setValue(value + 1);
         } 
     }
 
-    // Restar, no permite llegar a 0 unidades
     const btnMinus = () => {
         if (value > initial)  {
             setValue(value - 1)
@@ -20,7 +18,7 @@ function ItemCount({initial, max, onAdd}) {
     
     return (
         <div>
-            <div className="d-flex justify-content-center align-items-center">
+            <div className="d-flex justify-content-center align-items-center" style={{padding:'0'}}>
                 <button onClick={btnMinus} className="btn btn-warning">-</button>
                 <h3 className="m-2">{value}</h3>
                 <button onClick={btnPlus} className="btn btn-warning">+</button>

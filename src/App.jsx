@@ -3,7 +3,7 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
-import Error404 from './Error404.jsx';
+import Error404 from './404Error.jsx';
 import CartContextProvider from './components/CartContext/CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from './components/Form/Form';
@@ -20,12 +20,12 @@ function App() {
 						<Route
 							exact
 							path="/"
-							element={<ItemListContainer greeting="Nuts Emporium" />}
+							element={<ItemListContainer greeting="NUTS SHOP" />}
 						/>
 						<Route
 							exact 
 							path="/categoria/:idCategory"
-							element={<ItemListContainer greeting="Nuts Emporium" />}
+							element={<ItemListContainer greeting="NUTS SHOP" />}
 						/>
 						<Route
 							exact 

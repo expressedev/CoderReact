@@ -7,12 +7,12 @@ function Item({prod}) {
             <div className="card mt-5">
                 <img src={prod.imagen} className="card-img-top card-img-products" alt={prod.producto}/>
                 <div className="card-body text-center">
-                    <h5 className="card-title"><b>{prod.producto}</b></h5>
+                    <h5 className="card-title">{prod.producto}</h5>
                     <h6 className="card-text">${prod.precio}</h6>
                 </div>
-                <div className="card-footer text-center">
+                <div className="card-footer text-center" id="footer">
                     <Link to={`/detalle/${prod.id}`}>
-                        <button className="btn btn-warning bg-gradient">Info</button>
+                        <button className="btn btn-warning t" id="button">Info</button>
                     </Link>
                 </div>
             </div>

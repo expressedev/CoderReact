@@ -3,3 +3,17 @@
     height: 275px;
     object-fit: contain;
 }
+.card-title{
+    color: #f6e0a1;
+    font-weight: 900;
+}
+.card-text{
+    color: #f6e0a1;
+    font-weight: 900;
+}
+
+#footer{
+    background-color: rgba(132, 162, 88, 0.9);
+    border: 1px;
+}
+

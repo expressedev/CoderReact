@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 import ItemList from '../ItemList/ItemList'
 import Loader from '../Loader/Loader'
+import banner from './../../assets/img/banner.jpg'
+import '../ItemListContainer/banner.css'
 
 function ItemListContainer({greeting}) {
 
@@ -27,7 +29,8 @@ function ItemListContainer({greeting}) {
 
     return (
         <div>
-            <h5 className="text-center"> {greeting} </h5>
+            {/* <h2 className="text-center"> {greeting} </h2> */}
+            <img src={banner} className="img-fluid "></img>
             <div className="container">
                 <div className="row">
                     { loading 

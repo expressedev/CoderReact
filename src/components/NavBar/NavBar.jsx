@@ -9,16 +9,16 @@ import '../Cart/Cart.css'
 const NavBar = ({cartCount}) => {
 	return (
         <>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light" expand="lg" style={{padding:'0',}}>
                 <Container>
                     <Link to="/">
                         <Navbar.Brand>
                             <img
                                 src={logo}
-                                width="110"
-                                height="110"
+                                width="150px"
                                 className="d-inline-block align-top"
                                 alt="Nuts"
+                                style={{padding:'0'}}
                             />
                         </Navbar.Brand>
                     </Link>
