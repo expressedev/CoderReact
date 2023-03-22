@@ -32,7 +32,7 @@ function ItemDetail({product}) {
                     ? 
                         <ItemCount initial={1} max={product.stock} onAdd={onAdd} /> 
                     : 
-                        <div className="d-flex justify-content-center" style={{padding: '1.5rem'}}>
+                        <div className="d-flex justify-content-center" style={{padding: '1rem'}}>
                             <Link to={`/cart`}> 
                                 <button className="btn btn-warning bg-gradient me-2 mt-2" style={{color: '#ffffff', fontWeight: '900',}}>Ir al carrito</button>
                             </Link>
